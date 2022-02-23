@@ -10,6 +10,7 @@ function SWProvider({ children }) {
   const [column, setColumn] = useState('');
   const [comparison, setComparison] = useState('maior que');
   const [value, setValue] = useState('0');
+  const [order, setOrder] = useState({ column: 'population', sort: 'ASC' });
 
   const globalState = {
     data,
@@ -23,6 +24,8 @@ function SWProvider({ children }) {
     setComparison,
     value,
     setValue,
+    order,
+    setOrder,
   };
 
   useEffect(() => {
