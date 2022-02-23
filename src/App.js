@@ -1,5 +1,6 @@
 import React from 'react';
 import './App.css';
+import FilterList from './components/FilterList';
 import Header from './components/Header';
 import NameFilter from './components/NameFilter';
 import NumericFilterForm from './components/NumericFilterForm';
@@ -13,6 +14,7 @@ function App() {
       <NameFilter />
       <NumericFilterForm />
       <Table />
+      <FilterList />
     </SWProvider>
   );
 }
