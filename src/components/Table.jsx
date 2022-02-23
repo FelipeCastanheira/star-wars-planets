@@ -2,7 +2,7 @@ import React, { useContext } from 'react';
 import SWContext from '../context/SWContext';
 
 function Table() {
-  const { data } = useContext(SWContext);
+  const { data, filterByName } = useContext(SWContext);
   return (
     <table>
       <thead>
@@ -23,7 +23,7 @@ function Table() {
         </tr>
       </thead>
       <tbody>
-        { data.map((planet) => {
+        { data.filter(({ name }) => name.includes(filterByName.name)).map((planet) => {
           const { name,
             climate,
             created,
