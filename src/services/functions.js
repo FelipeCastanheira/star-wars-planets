@@ -1,9 +1,13 @@
 import { URL } from './constants';
 
-export const repeat = (number, action) => {
-  for (let i = 0; i < number; i += 1) {
-    action();
+export const isPlanetCorrect = ({ column, comparison, value }, data) => {
+  if (comparison === 'maior que') {
+    return (Number(data[column]) > Number(value));
   }
+  if (comparison === 'menor que') {
+    return (Number(data[column]) < Number(value));
+  }
+  return (Number(data[column]) === Number(value));
 };
 export const getPlanets = async () => {
   try {
