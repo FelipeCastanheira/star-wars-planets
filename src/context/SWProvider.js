@@ -4,14 +4,14 @@ import { getPlanets } from '../services/functions';
 import SWContext from './SWContext';
 
 function SWProvider({ children }) {
-  const [planets, setPlanets] = useState([]);
+  const [data, setData] = useState([]);
 
   const globalState = {
-    planets,
+    data,
   };
 
   useEffect(() => {
-    getPlanets().then((data) => setPlanets(data.results));
+    getPlanets().then(({ results }) => setData(results));
   }, []);
 
   return (
