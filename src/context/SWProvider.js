@@ -5,9 +5,12 @@ import SWContext from './SWContext';
 
 function SWProvider({ children }) {
   const [data, setData] = useState([]);
+  const [filterByName, setFilterByName] = useState({ name: '' });
 
   const globalState = {
     data,
+    filterByName,
+    setFilterByName,
   };
 
   useEffect(() => {
