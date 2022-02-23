@@ -1,8 +1,9 @@
 import React, { useContext } from 'react';
 import SWContext from '../context/SWContext';
+import { isPlanetCorrect } from '../services/functions';
 
 function Table() {
-  const { data, filterByName } = useContext(SWContext);
+  const { data, filterByName, filterByNumericValues } = useContext(SWContext);
   return (
     <table>
       <thead>
@@ -23,38 +24,41 @@ function Table() {
         </tr>
       </thead>
       <tbody>
-        { data.filter(({ name }) => name.includes(filterByName.name)).map((planet) => {
-          const { name,
-            climate,
-            created,
-            diameter,
-            edited,
-            films,
-            gravity,
-            orbital_period: orbitalPeriod,
-            population,
-            rotation_period: rotationPeriod,
-            surface_water: surfaceWater,
-            terrain,
-            url,
-          } = planet;
-          return (
-            <tr key={ name }>
-              <td>{ name }</td>
-              <td>{ rotationPeriod }</td>
-              <td>{ orbitalPeriod }</td>
-              <td>{ diameter }</td>
-              <td>{ climate }</td>
-              <td>{ gravity }</td>
-              <td>{ terrain }</td>
-              <td>{ surfaceWater }</td>
-              <td>{ population }</td>
-              <td>{ films }</td>
-              <td>{ created }</td>
-              <td>{ edited }</td>
-              <td>{ url }</td>
-            </tr>);
-        })}
+        { data.filter((planet) => planet.name.includes(filterByName.name)
+          && filterByNumericValues
+            .every((filter) => isPlanetCorrect(filter, planet)))
+          .map((planet) => {
+            const { name,
+              climate,
+              created,
+              diameter,
+              edited,
+              films,
+              gravity,
+              orbital_period: orbitalPeriod,
+              population,
+              rotation_period: rotationPeriod,
+              surface_water: surfaceWater,
+              terrain,
+              url,
+            } = planet;
+            return (
+              <tr key={ name }>
+                <td>{ name }</td>
+                <td>{ rotationPeriod }</td>
+                <td>{ orbitalPeriod }</td>
+                <td>{ diameter }</td>
+                <td>{ climate }</td>
+                <td>{ gravity }</td>
+                <td>{ terrain }</td>
+                <td>{ surfaceWater }</td>
+                <td>{ population }</td>
+                <td>{ films }</td>
+                <td>{ created }</td>
+                <td>{ edited }</td>
+                <td>{ url }</td>
+              </tr>);
+          })}
       </tbody>
     </table>
   );
