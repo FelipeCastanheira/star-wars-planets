@@ -28,6 +28,7 @@ body {
 }
 
 @keyframes showTitle {
+
   from {
     padding: 70px 210px;
   }
@@ -53,7 +54,7 @@ body {
   margin: 20px;
 }
 
-.filtersContainer form{
+.filtersContainer form {
   align-items: center;
   display: flex;
   flex-wrap: wrap;
@@ -72,8 +73,8 @@ input {
 
 .flex {
   display: flex;
-  justify-content: space-between;
   gap: 20px;
+  justify-content: space-between;
 }
 
 .flex label {
