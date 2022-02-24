@@ -1,3 +1,125 @@
+* {
+  color: beige;
+  margin: 0;
+  padding: 0;
+}
+
 body {
+  background-color: rgb(56, 33, 30);
   text-align: center;
+}
+
+.title {
+  height: 150px;
+  margin: 0 auto;
+  max-width: 600px;
+  position: relative;
+}
+
+.title img {
+  height: 100%;
+  width: 100%;
+}
+
+.title h1 {
+  position: absolute;
+  right: 55px;
+  top: 30px;
+}
+
+@keyframes showTitle {
+  from {
+    padding: 70px 210px;
+  }
+
+  to {
+    padding: 70px 0;
+  }
+}
+
+.title .empty {
+  animation: showTitle 2s ease-in;
+  background-color: rgb(56, 33, 30);
+  position: absolute;
+  right: 0;
+  top: 0;
+}
+
+.filtersContainer {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  margin: 20px;
+}
+
+.filtersContainer form{
+  align-items: center;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  justify-content: space-between;
+  margin: 10px auto;
+  width: 515px;
+}
+
+input {
+  background-color: transparent;
+  font-size: 15px;
+  height: 22px;
+  width: 110px;
+}
+
+.flex-column {
+  display: flex;
+  flex-direction: column;
+}
+
+.flex-column label {
+  align-items: center;
+  display: flex;
+  gap: 10px;
+}
+
+.order-form input {
+  width: 15px;
+}
+
+select {
+  background-color: transparent;
+  border-color: rgba(0, 0, 0, 0.2) grey gray rgba(0, 0, 0, 0.2);
+  border-width: 2px;
+  font-size: 15px;
+  height: 25px;
+}
+
+select option {
+  background-color: rgb(56, 33, 30);
+}
+
+.name-filter input {
+  height: 30px;
+  margin: -30px auto 15px;
+  width: 513px;
+}
+
+input::placeholder {
+  color: beige;
+  opacity: 50%;
+}
+
+button {
+  background-color: rgb(206, 232, 79);
+  border: none;
+  border-radius: 4px;
+  color: black;
+  font-size: 15px;
+  height: 27px;
+  padding: 0 10px;
+}
+
+button:disabled {
+  background-color: transparent;
+  border: 2px solid rgba(207, 232, 79, 0.644);
+  color: rgb(206, 232, 79);
 }
