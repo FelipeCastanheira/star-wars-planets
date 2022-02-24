@@ -132,3 +132,55 @@ button:disabled {
   border: 2px solid rgba(207, 232, 79, 0.644);
   color: rgb(206, 232, 79);
 }
+
+.filter-list {
+  align-items: center;
+  justify-self: end;
+}
+
+.filter-list .container {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 0 40px;
+}
+
+.filter-list .remove-all {
+  height: min-content;
+  margin: 40px;
+}
+
+.filter {
+  background-color: rgba(103, 161, 232, 0.3);
+  color: black;
+  margin: 10px auto;
+  padding: 4px;
+  position: relative;
+  text-align: start;
+  width: 220px;
+}
+
+.filter button {
+  position: absolute;
+  right: 0;
+  top: 0;
+}
+
+table {
+  text-align: start;
+}
+
+thead {
+  background-color: rgba(0, 0, 0, 0.4);
+}
+
+tbody {
+  background-color: rgba(103, 161, 232, 0.15);
+}
+
+td {
+  padding: 0 5px;
+}
+
+th {
+  padding: 5px;
+}
