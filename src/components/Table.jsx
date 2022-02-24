@@ -1,9 +1,9 @@
 import React, { useContext } from 'react';
 import SWContext from '../context/SWContext';
-import { isPlanetCorrect } from '../services/functions';
+import { getOrder, isPlanetCorrect } from '../services/functions';
 
 function Table() {
-  const { data, filterByName, filterByNumericValues } = useContext(SWContext);
+  const { data, filterByName, filterByNumericValues, order } = useContext(SWContext);
   return (
     <table>
       <thead>
@@ -27,6 +27,7 @@ function Table() {
         { data.filter((planet) => planet.name.includes(filterByName.name)
           && filterByNumericValues
             .every((filter) => isPlanetCorrect(filter, planet)))
+          .sort((a, b) => getOrder(a, b, order))
           .map((planet) => {
             const { name,
               climate,
@@ -44,7 +45,7 @@ function Table() {
             } = planet;
             return (
               <tr key={ name }>
-                <td>{ name }</td>
+                <td data-testid="planet-name">{ name }</td>
                 <td>{ rotationPeriod }</td>
                 <td>{ orbitalPeriod }</td>
                 <td>{ diameter }</td>
