@@ -6,3 +6,4 @@ export const OPTIONS = [
   'rotation_period',
   'surface_water',
 ];
+export const NEGATIVE = -1;
