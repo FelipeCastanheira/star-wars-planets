@@ -4,7 +4,7 @@ import SWContext from '../context/SWContext';
 function NameFilter() {
   const { filterByName, setFilterByName } = useContext(SWContext);
   return (
-    <label htmlFor="name-filter">
+    <label className="name-filter" htmlFor="name-filter">
       <input
         id="name-filter"
         type="text"
