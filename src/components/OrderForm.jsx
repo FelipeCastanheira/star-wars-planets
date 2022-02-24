@@ -19,7 +19,7 @@ function OrderForm() {
   // };
 
   return (
-    <form>
+    <form className="order-form">
       <label htmlFor="column-order">
         <select
           value={ order.column }
@@ -32,7 +32,7 @@ function OrderForm() {
             .map((option) => (<option key={ option }>{ option }</option>))}
         </select>
       </label>
-      <div>
+      <div className="flex-column">
         <label htmlFor="ASC">
           <input
             type="radio"
