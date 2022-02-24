@@ -70,12 +70,13 @@ input {
   width: 110px;
 }
 
-.flex-column {
+.flex {
   display: flex;
-  flex-direction: column;
+  justify-content: space-between;
+  gap: 20px;
 }
 
-.flex-column label {
+.flex label {
   align-items: center;
   display: flex;
   gap: 10px;
@@ -113,9 +114,16 @@ button {
   border: none;
   border-radius: 4px;
   color: black;
+  cursor: pointer;
   font-size: 15px;
   height: 27px;
   padding: 0 10px;
+  transition: 0.4s;
+}
+
+button:hover {
+  background-color: rgba(207, 232, 79, 0.4);
+  color: white;
 }
 
 button:disabled {

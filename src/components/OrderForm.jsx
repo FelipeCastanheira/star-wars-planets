@@ -32,7 +32,7 @@ function OrderForm() {
             .map((option) => (<option key={ option }>{ option }</option>))}
         </select>
       </label>
-      <div className="flex-column">
+      <div className="flex">
         <label htmlFor="ASC">
           <input
             type="radio"
