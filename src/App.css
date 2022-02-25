@@ -184,3 +184,7 @@ td {
 th {
   padding: 5px;
 }
+
+tbody tr:nth-child(even) {
+  background-color: rgba(103, 161, 232, 0.14);
+}
